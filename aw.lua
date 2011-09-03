@@ -162,8 +162,9 @@ for s = 1, screen.count() do
 
     mybottombox[s] = awful.wibox({ position = "bottom", screen = s, height = 15 })
     mybottombox[s].widgets = {
-            battery,
             batterytext,
+            battery,
+            volume,
             layout = awful.widget.layout.horizontal.leftright
     }
 
@@ -323,8 +324,10 @@ awful.rules.rules = {
 --    { rule = { class = "gimp" },
 --      properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+    { rule = { class = "Chromium" },
+       properties = { 
+           floating = false,
+           tag = tags[1][2] } },
 }
 -- }}}
 
