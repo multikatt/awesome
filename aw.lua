@@ -164,6 +164,8 @@ for s = 1, screen.count() do
     mybottombox[s].widgets = {
             batterytext,
             battery,
+            spacer,
+            volumetext,
             volume,
             layout = awful.widget.layout.horizontal.leftright
     }

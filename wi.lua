@@ -2,7 +2,7 @@ require("vicious")
 require("vicious.contrib")
 
 spacer = widget({ type = "textbox" })
-spacer.text = "::"
+spacer.text = " :: "
 
 batterytext = widget({ type ="textbox" })
 
@@ -37,8 +37,14 @@ volumetext = widget({ type = "textbox"})
 volume = awful.widget.progressbar()
 volume:set_width(100)
 volume:set_ticks(10)
+volume:set_color("#28ec51")
 vicious.register(volume, vicious.widgets.volume,
         function (widget, args)
+            if args[1] == 0 or args[2] == "♩" then
+                volumetext.text = "Volume (Muted):"
+            else
+                volumetext.text = "Volume:"
+            end
             return args[1]
         end
         ,4, "PCM")
