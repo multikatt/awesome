@@ -41,11 +41,11 @@ volume:set_color("#28ec51")
 vicious.register(volume, vicious.widgets.volume,
         function (widget, args)
             if args[1] == 0 or args[2] == "♩" then
-                volumetext.text = "Volume (Muted):"
+                volumetext.text = "Volume (M):"
             else
                 volumetext.text = "Volume:"
             end
             return args[1]
         end
-        ,4, "PCM")
+        ,0.2, "Master")
 

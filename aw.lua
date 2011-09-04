@@ -232,6 +232,10 @@ globalkeys = awful.util.table.join(
     -- Prompt
     awful.key({ modkey },            "p",     function () mypromptbox[mouse.screen]:run() end),
 
+    awful.key({                   }, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer -q sset Master 2dB+") end),
+    awful.key({                   }, "XF86AudioLowerVolume", function() awful.util.spawn("amixer -q sset Master 2dB-") end),
+    awful.key({                   }, "XF86AudioMute", function() awful.util.spawn("amixer -q sset Master toggle") end),
+
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run({ prompt = "Run Lua code: " },
