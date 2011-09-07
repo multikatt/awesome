@@ -10,7 +10,7 @@ battery = awful.widget.progressbar()
 battery:set_width(100)
 battery:set_ticks(10)
 battery:set_color("#28ec51")
---vicious.register(battery, vicious.widgets.bat,
+
 vicious.register(battery, vicious.contrib.batproc,
         function (widget, args)
             battery:set_color("#28ec51")
@@ -27,6 +27,7 @@ vicious.register(battery, vicious.contrib.batproc,
                 batterytext.text = "BAT0(" .. args[1] .."):"
             end
 
+            battery.widget:add_signal("mouse::enter", function () batterytext.text = "BAT0(" .. args[2] .. "%):" end)
             return args[2]
         end
       
