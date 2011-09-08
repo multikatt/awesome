@@ -25,9 +25,9 @@ vicious.register(battery, vicious.contrib.batproc,
                 batterytext.text = "BAT0:"
             else
                 batterytext.text = "BAT0(" .. args[1] .."):"
+                battery.widget:add_signal("mouse::enter", function () batterytext.text = "BAT0(" .. args[2] .. "%):" end)
             end
 
-            battery.widget:add_signal("mouse::enter", function () batterytext.text = "BAT0(" .. args[2] .. "%):" end)
             return args[2]
         end
       
