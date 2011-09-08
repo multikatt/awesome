@@ -41,7 +41,7 @@ volume:set_ticks(10)
 volume:set_color("#28ec51")
 vicious.register(volume, vicious.widgets.volume,
         function (widget, args)
-            if args[1] == 0 or args[2] == "♩" then
+            if args[2] == "♩" then
                 volumetext.text = "Volume (M):"
             else
                 volumetext.text = "Volume:"
